@@ -28,7 +28,7 @@ app.get('/aws/files', awsController.listFiles);
 app.get('/aws/files/:fileName', awsController.getFileSignedRequest);
 app.delete('/aws/files/:fileName', awsController.deleteFile);
  
-var port = process.env.PORT || 5000;
+var port = process.env.PORT;
 var server = http.createServer(app);
  
 server.listen(port, function (err) {
