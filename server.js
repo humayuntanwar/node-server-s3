@@ -23,14 +23,14 @@ if (process.env.NODE_ENV === 'development') {
   app.use(errorhandler())
 }
  
-app.get('aws/sign', awsController.signedRequest);
-app.get('aws/files', awsController.listFiles);
-app.get('aws/files/:fileName', awsController.getFileSignedRequest);
-app.delete('aws/files/:fileName', awsController.deleteFile);
+app.get('/aws/sign', awsController.signedRequest);
+app.get('/aws/files', awsController.listFiles);
+app.get('/aws/files/:fileName', awsController.getFileSignedRequest);
+app.delete('/aws/files/:fileName', awsController.deleteFile);
  
 var port = process.env.PORT || 5000;
 var server = http.createServer(app);
  
 server.listen(port, function (err) {
-  console.log('listening in http://localhost:' + port);
+  console.log('serving you at  in http://localhost:' + port);
 });
