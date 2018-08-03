@@ -59,7 +59,7 @@ exports.listFiles = function (req, res) {
         }
         return res.json(data);
     });
-}
+} 
  
 exports.deleteFile = function (req, res) {
     const s3Params = { 
