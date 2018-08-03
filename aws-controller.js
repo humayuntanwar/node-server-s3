@@ -14,7 +14,7 @@ exports.signedRequest = function (req, res) {
     const s3Params = {
         Bucket: secrets.aws_bucket,
         Key:   fileName,
-        Expires: 63,
+        Expires: 240,
         ContentType: fileType,
         ACL: 'private'
     };
@@ -37,7 +37,7 @@ exports.getFileSignedRequest = function (req, res) {
     const s3Params = {
         Bucket: secrets.aws_bucket,
         Key: req.params.fileName,
-        Expires: 60,
+        Expires: 240,
     };
  
     s3.getSignedUrl('getObject', s3Params, (err, data) => {
